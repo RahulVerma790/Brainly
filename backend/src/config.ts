@@ -1,0 +1,1 @@
+export const JWT_PASS = "JWT_BRAINLY_PASS";
