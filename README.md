@@ -1,54 +1,92 @@
-# React + TypeScript + Vite
+# 💬 Brainly — Real-time Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Brainly is a real-time chat application that allows users to sign up, join or create chat rooms, and exchange messages instantly using WebSockets. Built with a modern tech stack including React, TypeScript, Node.js, and WebSocket.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 User Authentication (Signup/Login)
+- 🧑‍💻 Real-time messaging with WebSocket
+- 💬 Public and private rooms
+- 📥 Join requests for private rooms
+- 🧠 Room-based message storage and display
+- 🔼 Message upvoting system
+- 🖥️ Responsive, clean and interactive UI
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tech Stack
+
+### Frontend:
+- ⚛️ React + TypeScript
+- 🧩 Tailwind CSS
+- 🌐 Axios for API calls
+- 📡 WebSocket for real-time communication
+
+### Backend:
+- 🟦 Node.js + TypeScript
+- 🔌 `ws` WebSocket library
+- 🔐 JWT-based authentication
+- 🗃️ MongoDB (or any database for storing users, rooms, messages)
+- 📁 Express.js for HTTP routes
+
+---
+
+## 📁 Folder Structure
+
+```
+Brainly-frontend/
+├── backend/ # WebSocket + REST API server
+│ ├── src/
+│ ├── dist/
+│ ├── package.json
+│ └── ...
+├── frontend/ # React + TypeScript frontend
+│ ├── src/
+│ ├── public/
+│ ├── package.json
+│ └── ...
+├── .gitignore
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 1. Clone the repository
+
 ```
+bash
+git clone https://github.com/<your-username>/Brainly-frontend.git
+cd Brainly-frontend
+```
+## 2. Setup Backend
+
+```
+bash
+cd backend
+npm install
+npm run dev  # or npm run start
+```
+
+## 3. Setup Frontend
+
+```
+bash
+cd ../frontend
+npm install
+npm run dev
+This runs the frontend at http://localhost:5173 (or as configured in Vite).
+```
+
+## 🧪 Test Flow
+- ✅ Signup/Login with JWT
+- 🔁 WebSocket connection on entering a room
+- ✍️ Real-time chat between users in the same room
+- 🔒 Private room join requests & approval
+- ⬆️ Message upvoting system
+
+## 📜 License
+This project is licensed under the MIT License.
